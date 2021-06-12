@@ -1,26 +1,23 @@
 #!/usr/bin/python3
 
+# Laplacian of an Image
+
 import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 
-image = cv.imread('./images/naruto.jpg')
-image = cv.resize(image,(400,400))
-cv.imshow("input",image)
+image = cv.imread('./images/itachi.jpg',0)
+image = cv.resize(image,(400,500))
+cv.imshow("input", image)
 
-gauss_mask = cv.GaussianBlur(image,(9,9),0)
-image_sharp = cv.addWeighted(image,2,gauss_mask,-1,0)
+#using 2nd order laplacian operator without Gaussian Filter
+imageWOb = cv.Laplacian(image,cv.CV_64F, ksize=1)
+cv.imshow("output : 2nd ord Derivateive w/o Blur", imageWOb)
 
-cv.imshow("output: sharpen",image_sharp)
+#using gaussian filter to remove noise
+image = cv.GaussianBlur(image,(3,3),0)
+image = cv.Laplacian(image,cv.CV_64F,ksize=1)
 
-kernel = np.array([[-1,-1,-1],
-                [-1,8,-1],
-                [-1,-1,-1]])
-
-# high pass filters can also be obtained by substraticng a low pass filtered image
-# from original image
-
-image_hpf = cv.filter2D(image,-1,kernel)
-cv.imshow("output : High pass filter ", image_hpf)
+cv.imshow("Output: 2nd ord Derivative",image)
 cv.waitKey(0)
-cv.destroyAllWindows()  
+cv.destroyAllWindows()
