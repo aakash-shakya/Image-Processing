@@ -5,8 +5,8 @@ import numpy as np
     change path of the image location
 '''
 
-path1 = 'itachi.jpg'
-path2 = 'naruto.jpg'
+path1 = './images/itachi.jpg'
+path2 = './images/naruto.jpg'
 
 image1 = cv2.imread(path1)
 image2 = cv2.imread(path2)

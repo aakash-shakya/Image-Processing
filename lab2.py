@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-image_path = 'images/itachi.jpg'
+image_path = 'images/naruto.jpg'
 
 img = cv.imread(image_path,0)
 ret,thresh1 = cv.threshold(img,127,255,cv.THRESH_BINARY)

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 blue = [255,0,0]
 
-img1 = cv.imread('./images/naruto.jpg')
+img1 = cv.imread('./images/kakashi.jpeg')
 replicate = cv.copyMakeBorder(img1, 10,10,10,10,cv.BORDER_REPLICATE)
 reflect = cv.copyMakeBorder(img1, 10,10,10,10,cv.BORDER_REFLECT)
 reflect_101 = cv.copyMakeBorder(img1, 10,10,10,10,cv.BORDER_REFLECT_101)

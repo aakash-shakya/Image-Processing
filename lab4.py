@@ -19,13 +19,6 @@ img3 = np.power(img1,gamma)
 gamma = 4
 img4 = np.power(img1,gamma)
 
-# cv.imshow('input image',img1)
-# cv.imshow('gamma 2',img2)
-# cv.imshow('gamma 3',img3)
-# cv.imshow('gamma 4',img4)
-
-# cv.waitKey()
-# cv.destroyAllWindows()
 
 titles = ['original Image','gamma 2','gamma 3','gamma 4']
 images = [img1,img2,img3,img4]
