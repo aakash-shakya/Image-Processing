@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img = cv2.imread("./images/kakashi.jpeg")
+img = cv2.imread("./images/noise.jpeg")
 blur = cv2.medianBlur(img,5)
 
 plt.subplot(121), plt.imshow(img), plt.title('Original')
